@@ -66,6 +66,3 @@ class EstateCars(Cars):
     def __init__(self, carYear, carModelName, carMotorType, carNumberOfDoors):
         carType = "Estate Cars"
         super().__init__(carType, carYear, carModelName, carMotorType, carNumberOfDoors)
-
-car = Pickups(2015, "ip", "d", "2")
-print(car.getCar())
