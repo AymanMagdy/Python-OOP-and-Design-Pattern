@@ -3,17 +3,17 @@ from Vehicles import Vehicles
 
 class Cars(Vehicles):
 
+    vehicleType = "Cars"
     carType = ""
     carYear = ""
     carMotorType = ""
     carModelName = ""
     carNumberOfDoors = ""
-    vehicleType = ""
 
 # The set methods for the car class..
 
     def __init__(self, carType, carYear, carModelName, carMotorType, carNumberOfDoors):
-        Vehicles.vehicleType = "Cars"
+        Vehicles.vehicleType = self.vehicleType
         self.carType = carType
         self.carYear = carYear
         self.carModelName = carModelName
@@ -42,8 +42,13 @@ class Cars(Vehicles):
             numberOfDoors = vehicles.getNumberOfdoors()
             return numberOfDoors
     
+    def getVehicleType(self):
+        vehicleType = Vehicles.getVehicleType()
+        return vehicleType
+    
     def getCar(self):
         carJsn = {
+            "Vehilcle Type": Vehicles.getVehicleType(self),
             "Car Type": self.carType,
             "Car Model": self.carModelName,
             "Car doors": self.carNumberOfDoors,
@@ -66,3 +71,6 @@ class EstateCars(Cars):
     def __init__(self, carYear, carModelName, carMotorType, carNumberOfDoors):
         carType = "Estate Cars"
         super().__init__(carType, carYear, carModelName, carMotorType, carNumberOfDoors)
+
+car = Pickups(2015, "ip", "d", "2")
+print(car.getCar())
