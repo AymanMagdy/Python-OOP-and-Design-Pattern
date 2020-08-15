@@ -13,12 +13,18 @@ class Cars(Vehicles):
 # The set methods for the car class..
 
     def __init__(self, carType, carYear, carModelName, carMotorType, carNumberOfDoors):
-        Vehicles.vehicleType = self.vehicleType
+        Vehicles.setVehicleType(self.vehicleType)
         self.carType = carType
         self.carYear = carYear
         self.carModelName = carModelName
         self.carMotorType = carMotorType
         self.carNumberOfDoors = carNumberOfDoors
+
+    def numberOfdoors(self, numberOfDoors):
+        if self.carType == "sports-car":
+            self.numberOfDoors = 2
+        else:
+            self.numberOfDoors = 4
 
 # The get methods for the car class
     

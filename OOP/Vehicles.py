@@ -4,7 +4,7 @@ class Vehicles:
     numberOfDoors = 0 
     vehicleType = ""
 
-    def vehicleType(vehicleType):
+    def setVehicleType(vehicleType):
         vehicleTypeName =  vehicleType
         return vehicleTypeName
 
@@ -14,14 +14,8 @@ class Vehicles:
         else:
             return True
     
-    def setNumberOfdoors(vehicleTypeName):
-        if vehicleTypeName == "Bikes":
-            numberOdoors = 0
-        elif vehicleTypeName == "Buses" | vehicleTypeName == "Trucks":
-            numberOdoors = 2
-        else:
-            numberOdoors = 4
-        return numberOdoors
+    def setNumberOfdoors(numberOfdoors):
+        self.numberOfDoors = numberOfdoors
 
     def setVehicleType(vehicleType):
         if vehicleType == "":

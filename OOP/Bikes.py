@@ -11,10 +11,13 @@ class Bikes(Vehicles):
     # The constructor with intializing all the class bikes variables.
 
     def __init__(self, bikeModel, bikeType, bikeYear):
-        Vehicles.vehicleType = self.vehicleType
+        Vehicles.setVehicleType(self, self.vehicleType)
         self.bikeModel = bikeModel
         self.bikeType = bikeType
         self.bikeYear = bikeYear
+    
+    def numberOfDoors(self):
+        return False
 
     # The Get methods for all the class variables
 
@@ -44,20 +47,21 @@ class Bikes(Vehicles):
     
     def getBike(self):
         bikeJsn = {
+            "Vehilcle Type": Vehicles.getVehicleType(self),
             "Bike type": self.bikeType,
             "Bike model": self.bikeModel,
-            "Bike year": self.bikeYear
+            "Bike year": self.bikeYear,
+            "Number of doors:": self.numberOfDoors()
         }
 
         return json.dumps(bikeJsn)
 
-class PedalBike(Bikes):
+class PedalBikes(Bikes):
     def __init__(self, bikeModel, bikeYear):
         bikeType = "Pedal Bike"
         super().__init__(bikeModel, bikeType, bikeYear)
 
-class MotorBike(Bikes):
+class PedalBikes(Bikes):
     def __init__(self, bikeModel, bikeYear):
-        bikeType = "Motor Bike"
+        bikeType = "Pedal Bike"
         super().__init__(bikeModel, bikeType, bikeYear)
-
