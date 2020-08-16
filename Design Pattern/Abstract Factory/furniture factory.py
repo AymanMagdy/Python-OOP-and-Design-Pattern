@@ -109,4 +109,3 @@ if __name__ == "__main__":
 
     print("Chair name: ", chairFactoryObject.getProductName())
     print("Chair type: ", chairFactoryObject.getProductType())
-    
